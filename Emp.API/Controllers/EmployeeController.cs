@@ -4,7 +4,7 @@ using Emp.Model;
 using Emp.Model.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Diagnostics;
+
 
 namespace Emp.API.Controllers
 {
@@ -43,13 +43,13 @@ namespace Emp.API.Controllers
                 {
                     return BadRequest();
                 }
-                var emp = _mapper.Map<Employee>(employeeDTO);   
-                if(emp != null)
-                {
-                    var dep = await _departmentRepository.GetById(emp.DepId);
-                    emp.Department = dep;
-                }
-                await _repository.Create(emp);
+                var emp = _mapper.Map<Employee>(employeeDTO);
+            if (emp != null)
+            {
+                var dep = await _departmentRepository.GetById(emp.DepId);
+                emp.Department = dep;
+            }
+            await _repository.Create(emp);
                 return CreatedAtAction("GetByIdEmployee", new { id = emp.EmpId }, emp);
         }
         [HttpPut("{id}")]

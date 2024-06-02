@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Emp.Model
 {
@@ -10,6 +11,7 @@ namespace Emp.Model
         public string Email { get; set; }
         public double Salary { get; set; }
         //Foreign Key 
+        [ForeignKey("Department")]
         public int DepId { get; set; }
         //Navigation property
         public Department Department { get; set; }

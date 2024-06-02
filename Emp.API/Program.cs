@@ -1,4 +1,3 @@
-
 using Emp.API.Common;
 using Emp.Data;
 using Emp.Data.Repositories.IRepository;
