@@ -3,6 +3,7 @@ using AutoMapper.Execution;
 using Emp.Data.Repositories.IRepository;
 using Emp.Model;
 using Emp.Model.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
@@ -10,6 +11,7 @@ using System.Reflection.Metadata.Ecma335;
 namespace Emp.API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class DepartmentController : ControllerBase
     {

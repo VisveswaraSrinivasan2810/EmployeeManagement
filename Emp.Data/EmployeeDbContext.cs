@@ -1,4 +1,6 @@
 ﻿using Emp.Model;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Emp.Data
 {
-    public class EmployeeDbContext : DbContext
+    public class EmployeeDbContext : IdentityDbContext<IdentityUser>
     {
         public EmployeeDbContext(DbContextOptions<EmployeeDbContext> options) : base(options)
         {

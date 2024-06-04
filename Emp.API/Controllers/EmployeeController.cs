@@ -2,6 +2,7 @@
 using Emp.Data.Repositories.IRepository;
 using Emp.Model;
 using Emp.Model.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Emp.API.Controllers
 {
     [Route("api/[controller]/[action]")]
+    [Authorize]
     [ApiController]
     public class EmployeeController : ControllerBase
     {
